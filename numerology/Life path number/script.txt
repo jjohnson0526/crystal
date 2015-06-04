@@ -1,0 +1,25 @@
+function run() {
+var month = document.getElementById("month").value.toString();
+var day = document.getElementById("day").value.toString();
+var year = document.getElementById("year").value.toString();
+var out = [];
+var sum = 0;
+
+function calculate(value) {  
+  do {
+    out.length = 0;
+    sum = 0;
+    
+    for (var i = 0; i < value.length; i++) {
+      out.push(+value.charAt(i));
+      }
+    
+    for (var j = 0; j < out.length; sum += out[j++]);
+    value = sum.toString();
+  } 
+  while (sum > 9);
+  console.log(sum);
+}
+  
+  calculate(month + day + year);
+}
